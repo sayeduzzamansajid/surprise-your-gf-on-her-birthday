@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Wish for You ❤️</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="bg-main text-main transition-colors duration-500">
+    <canvas id="effectCanvas" class="effect-canvas"></canvas>
+
+    <div id="mainContent" class="min-h-screen flex flex-col items-center justify-center p-4">
+        <div class="text-center mb-8">
+            <h1 class="font-orbitron text-3xl md:text-5xl font-bold" style="color: var(--primary-color);">Dedicated For Queen's Birthday ...
+            </h1>
+            <p class="mt-2 text-sm md:text-xl" style="color: var(--secondary-color);">Happy Birthday ----- </p>
+            <p class="mt-2 text-md md:text-xl" style="color: var(--secondary-color);">Press any button to reveal a
+                surprise! Every Button will please you Promise </p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 md:gap-4 w-full max-w-sm">
+            <button id="themeBtn" class="robotic-btn">Change Theme</button>
+            <button id="wishBtn" class="robotic-btn">A Wish</button>
+            <button id="snowBtn" class="robotic-btn">Snowfall</button>
+            <button id="confettiBtn" class="robotic-btn">Confetti</button>
+            <button id="heartsBtn" class="robotic-btn">Hearts</button>
+            <button id="songBtn" class="robotic-btn">Play Song</button>
+            <button id="loveModalBtn" class="robotic-btn">Love Note</button>
+            <button id="surpriseBtn" class="robotic-btn">Surprise!</button>
+            <button id="chainBtn" class="robotic-btn">Message Chain</button>
+        </div>
+
+        <button id="stopBtn"
+            class="mt-8 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg transition-colors">
+            Stop All Effects
+        </button>
+    </div>
+
+    <!-- Wishing Message Modal -->
+    <div id="wishModal" class="hidden custom-modal fixed inset-0 z-50 items-center justify-center p-4">
+        <div class="modal-content rounded-lg p-8 max-w-md w-full shadow-lg text-center">
+            <h2 class="text-2xl font-bold mb-4" style="color: var(--primary-color);">Happy Birthday  tui tor ja lagr dis</h2>
+            <p style="color: var(--text-color);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, ducimus? Vitae tempora adipisci sapiente. Reiciendis, perspiciatis accusantium. Soluta, ipsa! Dolor totam architecto distinctio voluptas reiciendis eos porro ducimus eius delectus.❤️</p>
+            <button onclick="closeModal('wishModal')"
+                class="mt-6 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Close</button>
+        </div>
+    </div>
+
+    <!-- Love Note Modal -->
+    <div id="loveModal" class="hidden custom-modal fixed inset-0 z-50 items-center justify-center">
+        <div class="heart-modal">
+            <p class="font-semibold text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, ducimus? Vitae tempora adipisci sapiente. Reiciendis, perspiciatis accusantium. Soluta, ipsa! Dolor totam architecto distinctio voluptas reiciendis eos porro ducimus eius delectus.</p>
+            <button onclick="closeModal('loveModal')"
+                class="absolute bottom-4 bg-white/50 hover:bg-white/70 text-black font-bold py-1 px-3 rounded-full text-sm">Close</button>
+        </div>
+    </div>
+
+    <!-- Message Chain Modal -->
+    <div id="chainModal" class="hidden custom-modal fixed inset-0 z-50 items-center justify-center p-4">
+        <div id="chainModalContent" class="modal-content rounded-lg p-6 max-w-sm w-full shadow-lg text-center">
+            <!-- Content will be injected by JS -->
+        </div>
+    </div>
+
+
+    <div id="surpriseContainer" class="hidden"></div>
+
+    
+    <script src="func.js"></script>
+</body>
+
+</html>
